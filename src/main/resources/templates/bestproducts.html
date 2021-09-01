@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.tymelif.org" xmlns:background-color="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Топ продаж</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/jbootstrap.min.js"></script>
+</head>
+<body>
+<h1>Топ  покупок </h1>
+<div>
+    <table th:if="${products.size()>0}" class="table">
+        <thead class="thead">
+        <tr>
+            <td>Наименование</td>
+            <td>Количество</td>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text ="${product.key}" />
+            <td th:text ="${product.value}" />
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>
