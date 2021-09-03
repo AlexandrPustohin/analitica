@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.tymelif.org" xmlns:background-color="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Аналитика продаж</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/jbootstrap.min.js"></script>
+</head>
+<body>
+<h1>Аналитика продаж</h1>
+<form    class="form-inline" th:action="@{'/getTotalForDay/'}">
+    <div >
+        <p class="lead"> Введите дату:</p>
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+        <input type="date" class="form-control" name="day">
+        <!--<input type="submit" class="btn btn-primary" value="Найти">-->
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-2">Найти сумму продаж</button>
+        <div>
+              <p th:utext ="${'Сумма продаж: '+total+' руб.'}" class="lead p-4"></p>
+        </div>
+    </div>
+</form>
+<form    class="form-inline" th:action="@{'/getBestForCard/'}">
+    <div >
+        <p class="lead"> Введите номер карты:</p>
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" name="card_number">
+   </div>
+    <button type="submit" class="btn btn-primary mb-2">Топ продаж</button>
+    <div>
+
+    </div>
+    </div>
+</form>
+ <a class="btn btn-info"    th:href="@{'/salelist/'}">Список продаж</a>
+
+
+</body>
+</html>
