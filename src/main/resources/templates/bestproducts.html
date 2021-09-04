@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/jbootstrap.min.js"></script>
 </head>
 <body>
-<h1>Топ  покупок </h1>
+<h1 th:text ="'Топ  покупок по карте №'+${cardNumber}"> </h1>
 <div>
     <table th:if="${products.size()>0}" class="table">
         <thead class="thead">

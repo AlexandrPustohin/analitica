@@ -55,6 +55,7 @@ public class SaleController {
                 ex.printStackTrace();
             }
         model.addAttribute("products", productDTOList);
+        model.addAttribute("cardNumber", cardNumber);
         return "bestproducts";
     }
     //список продуктов по карте и дате

@@ -9,13 +9,13 @@ public class SaleDTO {
     private long id;
     private long card_number;
     private Date date;
-    private List<ProductDTO> productDTOS;
+    private List<ProductDTO> products;
 
-    public SaleDTO(long id,long card_number, Date date, List<ProductDTO> productDTOS) {
+    public SaleDTO(long id,long card_number, Date date, List<ProductDTO> products) {
         this.id = id;
         this.card_number = card_number;
         this.date = date;
-        this.productDTOS = productDTOS;
+        this.products = products;
     }
 
     public SaleDTO() {
@@ -29,12 +29,12 @@ public class SaleDTO {
         this.id = id;
     }
 
-    public List<ProductDTO> getProductDTOS() {
-        return productDTOS;
+    public List<ProductDTO> getProducts() {
+        return products;
     }
 
-    public void setProductDTOS(List<ProductDTO> productDTOS) {
-        this.productDTOS = productDTOS;
+    public void setProducts(List<ProductDTO> products) {
+        this.products = products;
     }
 
     public long getCard_number() {
@@ -53,20 +53,16 @@ public class SaleDTO {
         this.date = date;
     }
 
-    public List<ProductDTO> getProducts() {
-        return productDTOS;
-    }
 
-    public void setProducts(List<ProductDTO> productDTOS) {
-        this.productDTOS = productDTOS;
-    }
+
+
 
     @Override
     public String toString() {
         return "Sale{" +
                 "card_number=" + card_number +
                 ", date=" + date +
-                ", products=" + productDTOS +
+                ", products=" + products +
                 '}';
     }
 }

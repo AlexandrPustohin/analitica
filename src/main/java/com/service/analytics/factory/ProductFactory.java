@@ -4,7 +4,9 @@ import com.service.analytics.dto.ProductDTO;
 import com.service.analytics.model.Product;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 @Component
 public class ProductFactory {
@@ -38,5 +40,13 @@ public class ProductFactory {
                 .collect(Collectors.toList());
     }
 
+    public List<ProductDTO> createSimpleListProducts(Map<String,Double> map){
+        List<ProductDTO> productDTOList = new ArrayList<>();
+
+        for(Map.Entry<String,Double> m: map.entrySet()){
+            productDTOList.add(new ProductDTO(m.getKey(),m.getValue()));
+        }
+        return productDTOList;
+    }
 
 }

@@ -19,6 +19,12 @@ public class ProductDTO {
     public ProductDTO() {
     }
 
+    public ProductDTO(String name,  double count) {
+        this.name = name;
+
+        this.count = count;
+    }
+
     public long getProduct_code() {
         return product_code;
     }

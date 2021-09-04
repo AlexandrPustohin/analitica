@@ -30,11 +30,13 @@ public class SaleFactory {
                 .id(sale.getId())
                 .card_number(sale.getCard_number())
                 .date(sale.getDate())
-                .productDTOS(productFactory.createProductDTOList(sale.getProducts())).build();
+                .products(productFactory.createProductDTOList(sale.getProducts())).build();
     }
     public List<SaleDTO> createListSaleDTO(List<Sale> saleList){
         return saleList.stream()
                 .map(this::fromSaleToDTO)
                 .collect(Collectors.toList());
     }
+
+
 }
