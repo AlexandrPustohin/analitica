@@ -23,7 +23,8 @@ public class SaleRestController {
     ProductFactory productFactory;
     @GetMapping("/getTotalForDay/{day}")
     public ResponseEntity<Double> getTotalForDay(@PathVariable String  day) throws ParseException {
-        return ResponseEntity.ok(saleService.getTotalForDay(day));
+        return ResponseEntity.ok(
+                saleService.getTotalForDay(day));
     }
     @GetMapping("/getBestForCard/{cardNumber}")
     public ResponseEntity<List<ProductDTO>> getBestForCard(@PathVariable String  cardNumber) throws ParseException {

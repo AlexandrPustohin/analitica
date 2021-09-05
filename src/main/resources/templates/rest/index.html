@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+   <head>
+      <title>Аналитика продаж</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+      <script src="./manager.js"></script>
+      
+       
+      <head>
+<body ng-app="AnaliticaManager" ng-controller="analiticaManagerController">
+    <div class="container">
+		<div class="alert alert-primary" role="alert">
+			<h3>
+				Аналитика продаж
+			</h3>
+		</div>
+	<form    class="form-inline" ng-submit="submitSumm()">
+		
+			<p class="lead"> Введите дату:</p>
+		
+		<div class="form-group mx-sm-3 mb-2">
+			<input type="date" class="form-control" name="day" ng-model="day">
+			
+		</div>
+		<button type="submit" class="btn btn-primary mb-2">Найти сумму продаж</button>
+		<div>
+				  <p class="lead p-4" >Сумма продаж: {{totalSumm}}</p>
+		</div>
+		
+	</form>
+	
+	<form    class="form-inline" ng-submit="submitTopSale()">
+		<div >
+			<p class="lead"> Введите номер карты:</p>
+		</div>
+		<div class="form-group mx-sm-3 mb-2">
+			<input type="text" class="form-control" name="card_number" ng-model="card_number">
+	   </div>
+		<button type="submit" class="btn btn-primary mb-2">Топ продаж</button>
+		
+	</form>
+	<div>
+		<h4>Топ  покупок по карте № {{card_number}} </h4>
+		<div>
+			<table class="table">
+				<thead class="thead">
+					<tr>
+						<td>Наименование</td>
+						<td>Количество</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="product in products">
+						<td> {{product.name}} </td>
+						<td> {{product.count}} </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+ </div>
+
+	
+	
+</body>	
+</html>
