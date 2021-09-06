@@ -29,7 +29,7 @@ public class ParserXML {
     @Autowired
     SaleServiceImpl saleService;
 
-    //TODO - добавить логгирование
+    //TODO - добавить логирование
     public  void parse(File filepath) throws ParserConfigurationException, IOException, SAXException {
         File xmlFile = filepath;
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
